@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentie | Asset Solution - RWA 質押與技術架構</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./index.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="Rentie Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="./index.html">Rentie Home</a></li>
+                <li><a href="./solution.html">Asset Solution</a></li>
+                <li><a href="./secure.html">Secure Tech</a></li>
+                <li><a href="./insights.html">Survey Insights</a></li>
+                <li><a href="./doc_center.html">文件中心</a></li>
+            </ul>
+            <div class="nav-placeholder"></div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="solution-wrapper">
+    <div class="container">
+        
+        <header class="solution-header">
+            <h1>Asset Solution：資產活化方案</h1>
+            <p>透過 RWA 技術與 XLS-66 原生借貸協議，將您的證券資產轉化為鏈上流動性，實現「不變現資產也能支應租屋開銷」的隱形金融願景。</p>
+        </header>
+
+        <section class="tech-main-card">
+            <div class="tech-content">
+                <h2>RWA 質押邏輯：<br>從證券到鏈上流動性</h2>
+                
+                <div class="tech-point">
+                    <h4>XLS-66 原生借貸協議</h4>
+                    <p>Rentie 利用 XRP Ledger 的原生借貸標準，確保每一筆資產質押與合約執行都在底層鏈上完成，保障最高級別的安全與透明度。</p>
+                </div>
+                
+                <div class="tech-point">
+                    <h4>資產特定性 (Asset Specificity)</h4>
+                    <p>目前精準支援台股 ETF (如 0050, 006208)，透過 RWA 技術將證券受益憑證轉化為數位擔保品，維持您的資產複利成長。</p>
+                </div>
+                
+                <div class="tech-point">
+                    <h4>隱形結算 (Invisible Settlement)</h4>
+                    <p>使用者無需理解複雜的區塊鏈錢包操作，系統自動完成鏈上鎖定，並即時撥付 RLUSD 穩定幣進行資金流轉。</p>
+                </div>
+            </div>
+            
+            <div class="tech-visual-mini">
+                <div class="shield-icon">🛡️</div>
+                <h3 class="green-text">XRP Ledger 底層驅動</h3>
+                <p class="sub-text">透過 XLS-66 協議<br>實現去中心化借貸邏輯</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">實時監控與風控體系</h2>
+        <div class="risk-grid">
+            <div class="risk-card">
+                <span class="icon">📊</span>
+                <h3>RWA Oracle (預言機)</h3>
+                <p>整合鏈外證券市場即時報價 (API)，確保質押資產的「市價」與鏈上數據每秒同步，杜絕資訊落差。</p>
+            </div>
+            <div class="risk-card">
+                <span class="icon">📉</span>
+                <h3>動態 LTV 質押率管理</h3>
+                <p>設定 50% 的安全質押區間。當股市波動導致資產價值下降時，系統會自動透過 LINE 提前推送預警通知。</p>
+            </div>
+            <div class="risk-card">
+                <span class="icon">🔐</span>
+                <h3>智慧合約監管</h3>
+                <p>押金鎖定於 XRPL 原生 Escrow 帳戶。非經雙方驗收通過或合約期滿，任何一方皆無法單獨動用資金。</p>
+            </div>
+        </div>
+
+        <div class="lifecycle-section">
+            <h2 class="lifecycle-title">The Lifecycle of RWA Staking</h2>
+            <div class="lifecycle-grid">
+                
+                <div class="step-item">
+                    <div class="step-dot">A</div>
+                    <h4>證券授權</h4>
+                    <p>使用者在 LINE 介面<br>選取 0050 等質押資產</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-dot">B</div>
+                    <h4>Oracle 評價</h4>
+                    <p>預言機抓取即時市價<br>動態計算可質押額度</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-dot">C</div>
+                    <h4>鏈上質押</h4>
+                    <p>XLS-66 協議自動執行<br>資產鎖定於 XRPL</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-dot">D</div>
+                    <h4>自動化現金結算</h4>
+                    <p>透過 BaaS 閘道將 RLUSD<br>轉為 TWD 匯入房東帳戶</p>
+                </div>
+
+            </div>
+
+            <div class="baas-notice">
+                <h4>💡 Automated Cash Settlement (自動化現金結算)</h4>
+                <p>
+                    <strong>運作原理：</strong>系統透過後端 <strong>BaaS (銀行即服務)</strong> 閘道，將質押產生的流動性即時轉換為法幣 (新台幣 TWD)，並自動匯入房東指定的銀行帳戶。<br>
+                    <strong>競爭優勢：</strong>房東端完全無感、無需持有數位錢包，成功達成 Web3 技術與傳統金融帳戶的無縫串接。
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Rentie Project. 鄭雨虹  黃乙芹  黃琪云</p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="回最頂端">
+    <span class="arrow">↑</span>
+    <span class="text">TOP</span>
+</button>
+
+<script>
+    // 取得按鈕
+    const mybutton = document.getElementById("backToTopBtn");
+
+    // 當使用者向下捲動 300px 時，顯示按鈕
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "flex";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.opacity = "0";
+            // 延遲隱藏，讓淡出動畫跑完
+            setTimeout(() => {
+                if(mybutton.style.opacity === "0") mybutton.style.display = "none";
+            }, 300);
+        }
+    };
+
+    // 捲動到最頂端的函式
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 讓捲動過程變得很滑順
+        });
+    }
+</script>
+    
+</body>
+</html>

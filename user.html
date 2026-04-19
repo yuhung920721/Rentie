@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentie 智慧租屋隱形金融 POC</title>
+    <link rel="stylesheet" href="./user.css">
+</head>
+
+<body>
+
+    <div class="phone-container">
+        <div class="header">
+            <div class="header-icon">R</div>
+            Rentie 租屋小幫手
+        </div>
+
+        <div class="chat-area" id="chatArea">
+        </div>
+
+        <div class="action-area" id="actionArea">
+            <button class="btn" id="btnStep1" onclick="triggerStep2()">查看資產活化方案</button>
+            <button class="btn" id="btnStep2" onclick="triggerStep3()">FaceID 一鍵 XRPFi 授權</button>
+        </div>
+    </div>
+
+    <script>
+        const chatArea = document.getElementById('chatArea');
+        const btnStep1 = document.getElementById('btnStep1');
+        const btnStep2 = document.getElementById('btnStep2');
+
+        // 輔助函數：建立訊息氣泡
+        function createMessage(text, sender, delay = 0, extraHTML = '') {
+            setTimeout(() => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `msg ${sender}`;
+                msgDiv.innerHTML = text + extraHTML;
+                chatArea.appendChild(msgDiv);
+                chatArea.scrollTop = chatArea.scrollHeight; // 自動捲動到底部
+            }, delay);
+        }
+
+        // 場景 1：接觸與情境導購 (Engagement & Contextual Guiding)
+        window.onload = () => {
+            createMessage("阿強，恭喜你找到高雄楠梓區的心儀物件！", 'rentie', 500);
+            createMessage("這筆合約入金（押二付一）共需 <strong>$27,000 元</strong>。", 'rentie', 1500);
+
+            // RWA 預言機偵測卡片
+            const oracleCard = `
+            <div class="rich-card">
+                <h4>📊 RWA 預言機偵測</h4>
+                <p>已綁定證券帳戶</p>
+                <p>持有 ETF 總值：<strong>$100,000</strong></p>
+            </div>
+        `;
+            createMessage("Rentie 發現您的投資帳戶有足夠資產。是否開啟『資產免變現支付方案』，用質押取代現金流出？", 'rentie', 3000, oracleCard);
+
+            // 顯示第一階段按鈕
+            setTimeout(() => { btnStep1.classList.add('active'); }, 4000);
+        };
+
+        // 場景 2：無感簽約 (Transaction Closure)
+        function triggerStep2() {
+            btnStep1.classList.remove('active'); // 隱藏按鈕
+            createMessage("我要開啟資產免變現方案", 'user', 0);
+
+            // LIFF 電子租約卡片
+            const liffCard = `
+            <div class="rich-card">
+                <h4>📄 電子租約確認</h4>
+                <p>承租標的：高雄楠梓區</p>
+                <p>擔保方式：抵押 STO 支付押金</p>
+                <p>註：期間可用質押代幣代償，<strong>不中斷配息</strong>！</p>
+            </div>
+        `;
+            createMessage("太好了！請確認您的電子租約，並授權 XRPFi 進行智能合約質押：", 'rentie', 1000, liffCard);
+
+            // 顯示第二階段按鈕 (Face ID 授權)
+            setTimeout(() => { btnStep2.classList.add('active'); }, 2500);
+        }
+
+        // 場景 3：售後服務與物業管理 (Property Mgmt)
+        function triggerStep3() {
+            btnStep2.classList.remove('active');
+            createMessage("✅ 已透過 FaceID 授權", 'user', 0);
+
+            const escrowCard = `
+            <div class="rich-card">
+                <h4>🏠 租屋儀表板</h4>
+                <p>狀態：<strong>XRPL 託管中</strong></p>
+                <p>已啟用：每月自動代扣租金</p>
+            </div>
+        `;
+            createMessage("恭喜支付完成！押金已安全鎖定於區塊鏈託管中。", 'rentie', 1000, escrowCard);
+            createMessage("祝你入住愉快，有任何物業報修問題，隨時可以傳 LINE 跟我說喔！", 'rentie', 2500);
+        }
+    </script>
+
+</body>
+
+</html>

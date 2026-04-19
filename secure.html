@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentie | Secure Tech - 隱形金融與安全機制</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./index.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="Rentie Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="./index.html">Rentie Home</a></li>
+                <li><a href="./solution.html">Asset Solution</a></li>
+                <li><a href="./secure.html">Secure Tech</a></li>
+                <li><a href="./insights.html">Survey Insights</a></li>
+                <li><a href="./doc_center.html">文件中心</a></li>
+            </ul>
+            <div class="nav-placeholder"></div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="secure-wrapper">
+    <div class="container">
+        
+        <section class="secure-hero">
+            <div class="secure-info">
+                <h1>Secure Tech：<br>金融級安全保障</h1>
+                <p>我們理解您對資產安全的重視。Rentie 將傳統銀行的防護實力與區塊鏈的不可篡改性結合，打造「資產不經過私人帳戶」的絕對純淨體驗。</p>
+                <div style="margin-top: 30px;">
+                    <span class="trust-badge-inline">✔️ XRPL 智能合約審計通過</span>
+                </div>
+            </div>
+
+            <div class="phone-wrapper" style="position: relative;">
+                <div id="faceidOverlay" class="faceid-overlay">
+                    <div class="faceid-icon">👤</div>
+                    <p>FaceID 辨識中...</p>
+                </div>
+
+                <div class="phone-header">Rentie 租屋小幫手</div>
+                <div class="chat-area" id="chatArea">
+                    </div>
+                <div class="action-area">
+                    <button class="btn-chat" id="btnStep1" onclick="triggerStep2()">確認資產質押方案</button>
+                    <button class="btn-chat" id="btnStep2" onclick="triggerStep3()">FaceID 安全授權</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="secure-bento-grid">
+            
+            <div class="secure-card">
+                <div class="card-icon">🔐</div>
+                <div class="card-title">Smart Escrow 智慧託管</div>
+                <ul class="card-content">
+                    <li><strong>非對人轉帳：</strong>押金不再直接匯入房東私人戶頭，而是鎖定於 XRPL 原生 Escrow 節點，由程式碼管控。</li>
+                    <li><strong>條件式釋放：</strong>資金僅在「租客確認入住」或「租約期滿驗收」時解鎖，排除惡意房東挪用風險。</li>
+                    <li><strong>防範詐騙：</strong>中立的區塊鏈合約作為第三方，有效排除捲款潛逃或不合理扣留押金。</li>
+                </ul>
+            </div>
+
+            <div class="secure-card">
+                <div class="card-icon">🆔</div>
+                <div class="card-title">MFA 多因素驗證</div>
+                <ul class="card-content">
+                    <li><strong>雙重關卡：</strong>除了 LINE 對話外，質押與支付等金流異動均須觸發生物辨識二次授權。</li>
+                    <li><strong>硬體級保護：</strong>整合手機原生 FaceID 或指紋辨識。即使手機遺失，無生物特徵亦無法動用。</li>
+                    <li><strong>隱形銀行體驗：</strong>在熟悉的對話框內，享受與銀行 App 同等級的軍事級安全防護力。</li>
+                </ul>
+            </div>
+
+            <div class="secure-card">
+                <div class="card-icon">🛡️</div>
+                <div class="card-title">隱私與數據隔離</div>
+                <ul class="card-content">
+                    <li><strong>分層數據隔離：</strong>採用 CaaS 架構，將社群介面層與金融結算層 (BaaS) 進行物理性隔離。</li>
+                    <li><strong>符合個資規範：</strong>所有傳輸均經過 AES-256 加密，不留存在社交平台伺服器，保障用戶隱私。</li>
+                    <li><strong>透明化存證：</strong>質押憑證記錄於公有鏈，不可篡改，提供具法律效力的數位存證。</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Rentie Project. 鄭雨虹  黃乙芹  黃琪云</p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="回最頂端">
+    <span class="arrow">↑</span>
+    <span class="text">TOP</span>
+</button>
+
+<script>
+    // 取得按鈕
+    const mybutton = document.getElementById("backToTopBtn");
+
+    // 當使用者向下捲動 300px 時，顯示按鈕
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "flex";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.opacity = "0";
+            // 延遲隱藏，讓淡出動畫跑完
+            setTimeout(() => {
+                if(mybutton.style.opacity === "0") mybutton.style.display = "none";
+            }, 300);
+        }
+    };
+
+    // 捲動到最頂端的函式
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 讓捲動過程變得很滑順
+        });
+    }
+</script>
+    
+<script>
+    const chatArea = document.getElementById('chatArea');
+    const btnStep1 = document.getElementById('btnStep1');
+    const btnStep2 = document.getElementById('btnStep2');
+    const faceidOverlay = document.getElementById('faceidOverlay');
+
+    function createMessage(text, sender, delay = 0, extraHTML = '') {
+        setTimeout(() => {
+            const msgContainer = document.createElement('div');
+            msgContainer.className = `msg-wrapper ${sender}`;
+            const avatarSrc = (sender === 'rentie') ? "./logo.png" : "./user.jpg";
+
+            msgContainer.innerHTML = `
+                <img src="${avatarSrc}" class="avatar" alt="${sender}">
+                <div class="msg-bubble">
+                    ${text}
+                    ${extraHTML}
+                </div>
+            `;
+            chatArea.appendChild(msgContainer);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }, delay);
+    }
+
+    window.onload = () => {
+        createMessage("阿強，準備好簽署合約了嗎？", 'rentie', 500);
+        createMessage("系統偵測到質押資產已就緒，押金將進入 <strong>Smart Escrow</strong> 託管。", 'rentie', 1500);
+        setTimeout(() => { if(btnStep1) btnStep1.classList.add('active'); }, 2200);
+    };
+
+    function triggerStep2() {
+        btnStep1.classList.remove('active');
+        createMessage("確認方案，開始簽約", 'user', 0);
+        createMessage("為了確保安全，請進行 FaceID 生物辨識授權。", 'rentie', 800);
+        setTimeout(() => { if(btnStep2) btnStep2.classList.add('active'); }, 1500);
+    }
+
+    function triggerStep3() {
+        btnStep2.classList.remove('active');
+        // 觸發 FaceID 視覺效果
+        faceidOverlay.classList.add('active');
+        
+        setTimeout(() => {
+            faceidOverlay.classList.remove('active');
+            createMessage("✅ 已通過 FaceID 硬體級授權", 'user', 0);
+            createMessage("支付成功！押金已透過 XLS-66 協議安全鎖定，房東將於入住日收到撥款。", 'rentie', 1000);
+        }, 2000); // 模擬辨識 2 秒
+    }
+</script>
+
+</body>
+</html>

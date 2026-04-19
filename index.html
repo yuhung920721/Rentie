@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentie | 首頁 - 品牌願景</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./index.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="Rentie Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="./index.html">Rentie Home</a></li>
+                <li><a href="./solution.html">Asset Solution</a></li>
+                <li><a href="./secure.html">Secure Tech</a></li>
+                <li><a href="./insights.html">Survey Insights</a></li>
+                <li><a href="./doc_center.html">文件中心</a></li>
+            </ul>
+            <div class="nav-placeholder"></div>
+        </div>
+    </nav>
+
+    <main>
+        
+<div class="home-wrapper">
+    <section id="hero" class="section hero-bg"
+        style="background: rgb(235, 235, 233); border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; padding-bottom: 60px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+        <div class="container hero-chat-container">
+            <h1 class="hero-ai-title">Ask <span class="highlight">Rentie AI</span></h1>
+            <p class="hero-ai-subtitle">RWA 隱形銀行顧問，您的數位資產活化專家。</p>
+
+            <div class="hero-stats" id="heroStats">
+                <div class="stat-item">
+                    <p style="font-size: 20px; font-weight: bold; color: var(--charcoal);">租屋不賣產，生活更資產</p>
+                </div>
+            </div>
+
+            <div class="hero-input-wrapper">
+                <div class="input-box">
+                    <span class="icon-bot">🤖</span>
+                    <input type="text" id="mainAiInput" placeholder="我想了解 RWA 押金代墊如何運作？"
+                        onkeypress="handleMainAIKeyPress(event)">
+                    <button class="btn-send" onclick="sendMainAIMessage()">➔</button>
+                </div>
+
+                <div class="suggestion-chips" id="suggestionChips">
+                    <button onclick="fillAndSend('➔ 了解 RWA 押金代墊')">➔ 了解 RWA 押金代墊</button>
+                    <button onclick="fillAndSend('➔ 房屋託管收費方式')">➔ 房屋託管收費方式</button>
+                    <button onclick="fillAndSend('➔ 我的 ETF 可以質押嗎？')">➔ 我的 ETF 可以質押嗎？</button>
+                </div>
+            </div>
+
+            <div id="mainAiChatArea" class="main-ai-chat-area hidden">
+                <div class="ai-body" id="mainAiBody">
+                    <div class="msg-wrapper rentie">
+                        <img src="./logo.png" class="avatar" alt="Rentie">
+                        <div class="msg-bubble">
+                            您好！我是 Rentie 專屬 AI 顧問。請問您今天是想了解「RWA 押金代墊」、「房屋託管服務」，還是有其他租賃問題呢？
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bento-container">
+
+        <h2 class="section-title">Rentie 服務流程</h2>
+        <div class="steps-grid">
+            <div class="bento-card step-card">
+                <div class="step-num">1</div>
+                <h3>挑選房源</h3>
+                <p>在 LINE 中瀏覽心儀物件，透過對話即服務 (CaaS) 輕鬆篩選。</p>
+                <div class="mockup-box">
+                    <img src="./4.3.png">
+                </div>
+            </div>
+            <div class="bento-card step-card">
+                <div class="step-num">2</div>
+                <h3>活化資產</h3>
+                <p>選擇質押手頭的 RWA 資產（如 ETF），不需賣股變現即可取得押金信用額度。</p>
+                <div class="mockup-box">
+                    <img src="./step2.png">
+
+                </div>
+            </div>
+            <div class="bento-card step-card">
+                <div class="step-num">3</div>
+                <h3>無感支付</h3>
+                <p>系統透過智能合約自動執行押金託管與簽約，過程安全且無感。</p>
+                <div class="mockup-box">
+                    <img src="./step3.png">
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">誰最需要 Rentie？</h2>
+        <div class="persona-grid">
+            <div class="bento-card persona-card charcoal-bg">
+                <div class="persona-header">
+                    <img src="./user1.png" alt="小曼" class="persona-avatar">
+                    <div>
+                        <h3 style="margin:0; font-size:22px;">小曼 / 23歲 研究生</h3>
+                    </div>
+                </div>
+                <div class="persona-quote">
+                    「我不應該為了付押金，就賣掉存下來的小資資產。」
+                </div>
+                <div class="persona-details">
+                    <p><strong>背景與痛點：</strong> 剛上研究所。面對押金有極大的現金流焦慮。</p>
+                    <p><strong>Rentie 方案：</strong> 無感質押、去術語化的陪伴引導。</p>
+                </div>
+                <div class="persona-details">
+                    <p>#研究生日常
+                        #小資存股
+                        #數位原住民
+                        #拒絕押金焦慮
+                        #投資不中斷
+                    </p>
+                </div>
+            </div>
+
+            <div class="bento-card persona-card charcoal-bg">
+                <div class="persona-header">
+                    <img src="./user.jpg" alt="阿強" class="persona-avatar">
+                    <div>
+                        <h3 style="margin:0; font-size:22px;">阿強 / 25歲 工程師</h3>
+                    </div>
+                </div>
+                <div class="persona-quote">
+                    「我的 0050 是為了長期複利存的，不該為了搬家而中斷計畫。」
+                </div>
+                <div class="persona-details">
+                    <p><strong>背景與痛點：</strong> 科技業新鮮人。不願中斷複利，極度重視交易安全。</p>
+                    <p><strong>Rentie 方案：</strong> 收益不中斷 (配息照領)、FaceID 硬體級安全授權。</p>
+                </div>
+                <div class="persona-details">
+                    #複利的力量
+                    #RWA質押
+                    #股利照領
+                    #金融安全
+                    #資產再造計畫
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="section-title">Rentie 核心優勢</h2>
+            <div class="value-grid">
+                <div class="bento-card value-card">
+                    <h3>📈 資產不變現</h3>
+                    <p>強調股利照領，維持資產複利成長，將搬家的機會成本降到最低。</p>
+                </div>
+                <div class="bento-card value-card">
+                    <h3>🛡️ 銀行級安全</h3>
+                    <p>結合 MFA (FaceID) 硬體授權與 XRPL Escrow 去中心化託管機制。</p>
+                </div>
+                <div class="bento-card value-card">
+                    <h3>💬 隱形金融體驗</h3>
+                    <p>貫徹 CaaS (對話即服務) 模式，免下載繁雜 App，直接於 LINE 內完成所有任務。</p>
+                </div>
+            </div>
+
+            <div class="trust-section">
+                <h3 style="color: #666; font-size: 16px;">底層技術與協議支援</h3>
+                <div class="trust-logos">
+                    <div class="trust-badge">XRP Ledger (XRPL)</div>
+                    <div class="trust-badge">XLS-66 Protocol</div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script>
+            function handleMainAIKeyPress(event) {
+                if (event.key === 'Enter') sendMainAIMessage();
+            }
+
+            function fillAndSend(text) {
+                document.getElementById('mainAiInput').value = text.replace('➔ ', '');
+                sendMainAIMessage();
+            }
+
+            function sendMainAIMessage() {
+                const inputField = document.getElementById('mainAiInput');
+                const text = inputField.value.trim();
+                if (!text) return;
+
+                document.getElementById('heroStats').style.display = 'none';
+                document.getElementById('suggestionChips').style.display = 'none';
+                const chatArea = document.getElementById('mainAiChatArea');
+                chatArea.classList.remove('hidden');
+
+                const aiBody = document.getElementById('mainAiBody');
+
+                aiBody.innerHTML += `
+            <div class="msg-wrapper user">
+                <div class="msg-bubble">${text}</div>
+            </div>
+        `;
+                inputField.value = '';
+                chatArea.scrollTop = chatArea.scrollHeight;
+
+                setTimeout(() => {
+                    let reply = "這是一個很好的問題！您可以留下聯絡方式，我們的專業顧問會盡快為您提供詳細的方案評估。";
+
+                    if (text.includes('託管')) {
+                        reply = "Rentie 的【智能託管服務】整合了 XRPL 智能合約，能自動化處理租金代扣與修繕通報，並提供專屬的房東儀表板。您想了解具體的收費標準嗎？";
+                    } else if (text.includes('押金') || text.includes('RWA') || text.includes('ETF') || text.includes('質押')) {
+                        reply = "我們的核心特色是『資產免變現』。您可以質押持有的 ETF，在不中斷配息的情況下，由 Rentie 開立信用憑證給房東取代現金押金。";
+                    }
+
+                    aiBody.innerHTML += `
+                <div class="msg-wrapper rentie">
+                    <img src="./logo.png" class="avatar" alt="Rentie">
+                    <div class="msg-bubble">${reply}</div>
+                </div>
+            `;
+                    chatArea.scrollTop = chatArea.scrollHeight;
+                }, 800);
+            }
+        </script>
+        
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Rentie Project. 鄭雨虹  黃乙芹  黃琪云</p>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="回最頂端">
+    <span class="arrow">↑</span>
+    <span class="text">TOP</span>
+</button>
+
+<script>
+    // 取得按鈕
+    const mybutton = document.getElementById("backToTopBtn");
+
+    // 當使用者向下捲動 300px 時，顯示按鈕
+    window.onscroll = function() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            mybutton.style.display = "flex";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.opacity = "0";
+            // 延遲隱藏，讓淡出動畫跑完
+            setTimeout(() => {
+                if(mybutton.style.opacity === "0") mybutton.style.display = "none";
+            }, 300);
+        }
+    };
+
+    // 捲動到最頂端的函式
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 讓捲動過程變得很滑順
+        });
+    }
+</script>
+    
+</body>
+</html>
